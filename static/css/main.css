@@ -1,3 +1,16 @@
+body {
+    width: 100%;
+    text-align: center;
+}
 h1 {
     color: red;
+    text-emphasis: center;
+}
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+table {
+    margin: 0 auto;
+    border: 1px solid black;
 }
