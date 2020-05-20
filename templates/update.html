@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>{{ gettext('Task Master') }}</h1>
+    <h2>language {{ get_locale() }}</h2>
+    {% for language in AVAILABLE_LANGUAGES %}
+         <a href="{{ url_for('set_language', language=language) }}" >{{ language }}</a>
+    {% endfor %}
+    <table>
+        <tr>
+            <th>{{ gettext('Task') }}</th>
+            <th>{{ gettext('Added') }}</th>
+            <th>{{ gettext('Actions') }}</th>
+        </tr>
+        
+    </table>
+    <form action="/update/{{ task.id }}" method="POST">
+        <input type="text" name="content" id="content" value="{{ task.content }}">
+        <input type="submit" value="Update">
+    </form>
+</div>
+{% endblock %}
